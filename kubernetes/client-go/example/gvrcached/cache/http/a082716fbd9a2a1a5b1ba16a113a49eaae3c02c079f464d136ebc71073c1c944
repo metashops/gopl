@@ -1,0 +1,10 @@
+Â)J>öéÌ´#ëÔ¤wn&M'~<å“ÞÌ$àX¼NoNDHTTP/2.0 200 OK
+Content-Length: 400
+Audit-Id: 30ee92ec-de09-42df-b20e-3c9d0fa62cf7
+Cache-Control: no-cache, private
+Content-Type: application/json
+Date: Mon, 31 Oct 2022 15:30:07 GMT
+X-Kubernetes-Pf-Flowschema-Uid: 8794fa58-d71c-4438-92a9-0786f785339c
+X-Kubernetes-Pf-Prioritylevel-Uid: ee343cfd-ab2a-4559-97c1-559a7e98c775
+
+{"kind":"APIResourceList","apiVersion":"v1","groupVersion":"app.yufu.io/v1beta1","resources":[{"name":"myapps","singularName":"myapp","namespaced":true,"kind":"MyApp","verbs":["delete","deletecollection","get","list","patch","create","update","watch"],"storageVersionHash":"3rl1kV8t98o="},{"name":"myapps/status","singularName":"","namespaced":true,"kind":"MyApp","verbs":["get","patch","update"]}]}
