@@ -1,20 +1,25 @@
 package main
 
 import (
-	`fmt`
-
 	tree "gopl/algorithm/lc/common"
 )
 
-// （1）递归版本的前序遍历
-func invertTree1(root *tree.TreeNode) *tree.TreeNode {
+type RN struct {
+}
+
+func NewRN() *RN {
+	return &RN{}
+}
+
+// InvertTree1 （1）递归版本的前序遍历
+func (r *RN) InvertTree1(root *tree.TreeNode) *tree.TreeNode {
 	if root == nil {
 		return nil
 	}
 
 	root.Left, root.Right = root.Right, root.Left
-	invertTree1(root.Left)
-	invertTree1(root.Right)
+	r.InvertTree1(root.Left)
+	r.InvertTree1(root.Right)
 
 	return root
 }
@@ -36,8 +41,8 @@ func invertTree2(root *tree.TreeNode) *tree.TreeNode {
 	return root
 }
 
-// 递归前序遍历
-func preorderTraversal(root *tree.TreeNode) (res []int) {
+// PreorderTraversal 递归前序遍历
+func (r *RN) PreorderTraversal(root *tree.TreeNode) (res []int) {
 	var traversal func(node *tree.TreeNode)
 	traversal = func(node *tree.TreeNode) {
 		if node == nil {
@@ -64,18 +69,4 @@ func postorderTraversal(root *tree.TreeNode) (res []int) {
 	}
 	traversal(root)
 	return res
-}
-
-func main() {
-	n6 := tree.TreeNode{Val: 6, Left: nil, Right: nil}
-	n4 := tree.TreeNode{Val: 4, Left: nil, Right: &n6}
-	n3 := tree.TreeNode{Val: 3, Left: nil, Right: nil}
-	n2 := tree.TreeNode{Val: 2, Left: nil, Right: nil}
-	n1 := tree.TreeNode{Val: 1, Left: &n2, Right: &n3}
-
-	tn := tree.NewTreeNode(5, &n1, &n4)
-	tree1 := invertTree1(tn)
-
-	res := preorderTraversal(tree1)
-	fmt.Println(res)
 }
