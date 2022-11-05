@@ -1,9 +1,7 @@
 package main
 
 import (
-	`fmt`
-
-	tree `gopl/algorithm/lc/common`
+	tree "gopl/algorithm/lc/common"
 )
 
 func maxDepth(root *tree.TreeNode) int {
@@ -30,15 +28,15 @@ func maxDepth(root *tree.TreeNode) int {
 	return depth
 }
 
-func main() {
-	n6 := tree.TreeNode{Val: 6, Left: nil, Right: nil}
-	n4 := tree.TreeNode{Val: 4, Left: nil, Right: &n6}
-	n3 := tree.TreeNode{Val: 3, Left: nil, Right: nil}
-	n2 := tree.TreeNode{Val: 2, Left: nil, Right: nil}
-	n1 := tree.TreeNode{Val: 1, Left: &n2, Right: &n3}
-
-	tn := tree.NewTreeNode(5, &n1, &n4)
-	t := maxDepth(tn)
-	fmt.Println(t)
-
-}
+// func main() {
+// 	n6 := tree.TreeNode{Val: 6, Left: nil, Right: nil}
+// 	n4 := tree.TreeNode{Val: 4, Left: nil, Right: &n6}
+// 	n3 := tree.TreeNode{Val: 3, Left: nil, Right: nil}
+// 	n2 := tree.TreeNode{Val: 2, Left: nil, Right: nil}
+// 	n1 := tree.TreeNode{Val: 1, Left: &n2, Right: &n3}
+//
+// 	tn := tree.NewTreeNode(5, &n1, &n4)
+// 	t := maxDepth(tn)
+// 	fmt.Println(t)
+//
+// }
