@@ -1,14 +1,10 @@
 package main
 
-import (
-	`fmt`
-)
-
-func main() {
-	str := "abcdefg" // bacdge
-	s := reverseStr(str, 2)
-	fmt.Println(s)
-}
+// func main() {
+// 	str := "abcdefg" // bacdge
+// 	s := reverseStr(str, 2)
+// 	fmt.Println(s)
+// }
 
 func reverseStr(s string, k int) string {
 	str := []byte(s)
