@@ -1,7 +1,7 @@
 package main
 
 import (
-	tree `gopl/algorithm/lc/common`
+	tree "gopl/algorithm/lc/common"
 )
 
 // 对称二叉树
