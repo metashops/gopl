@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 /**
 给你一个整数数组 cost ，其中 cost[i] 是从楼梯第 i 个台阶向上爬需要支付的费用。
 一旦你支付此费用，即可选择向上爬一个或者两个台阶。
@@ -13,10 +9,10 @@ import (
 
 */
 
-func main() {
-	min := minCostClimbingStairs([]int{10, 15, 20, 5})
-	fmt.Println(min)
-}
+// func main() {
+// 	min := minCostClimbingStairs([]int{10, 15, 20, 5})
+// 	fmt.Println(min)
+// }
 
 func minCostClimbingStairs(cost []int) int {
 	length := len(cost)
