@@ -1,0 +1,40 @@
+# LimitRange for Pod or Container
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: LimitRangeName
+  namespace: default
+spec:
+  limits:
+  # 'default' and 'defaultRequest' may not be specified when type is 'Pod'
+  - type: Container
+    default:
+      cpu: 100m
+      memory: 512Mi
+    defaultRequest:
+      cpu: 100m
+      memory: 256Mi
+    max:
+      cpu: 200m
+      memory: 512Mi
+    min:
+      cpu: 100m
+      memory: 256Mi
+---
+# LimitRange for PersistentVolumeClaim
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: LimitRangeName
+  namespace: default
+spec:
+  limits:
+  - type: PersistentVolumeClaim
+    default:
+      storage: 2Gi
+    defaultRequest:
+      storage: 2Gi
+    max:
+      storage: 2Gi
+    min:
+      storage: 2Gi
