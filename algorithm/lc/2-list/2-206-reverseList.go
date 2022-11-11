@@ -46,7 +46,7 @@ func main() {
 	fmt.Println(p)
 }
 
-func list(head *node.ListNode) []int {
+func List(head *node.ListNode) []int {
 	var res []int
 	for head != nil {
 		res = append(res, head.Val)
