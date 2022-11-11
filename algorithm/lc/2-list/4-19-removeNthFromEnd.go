@@ -12,17 +12,17 @@ description:给你一个链表，删除链表的倒数第 n 个结点，并且�
 输出：[1,2,3,5]
 */
 
-func main() {
-	n7 := &node.ListNode{Val: 7, Next: nil}
-	n6 := &node.ListNode{Val: 6, Next: n7}
-	n5 := &node.ListNode{Val: 5, Next: n6}
-	n4 := &node.ListNode{Val: 4, Next: n5}
-	n3 := &node.ListNode{Val: 3, Next: n4}
-	n2 := &node.ListNode{Val: 2, Next: n3}
-	n1 := &node.ListNode{Val: 1, Next: n2}
-	rel := removeElements1(n1, 2)
-	fmt.Println(rel)
-}
+// func main() {
+// 	n7 := &node.ListNode{Val: 7, Next: nil}
+// 	n6 := &node.ListNode{Val: 6, Next: n7}
+// 	n5 := &node.ListNode{Val: 5, Next: n6}
+// 	n4 := &node.ListNode{Val: 4, Next: n5}
+// 	n3 := &node.ListNode{Val: 3, Next: n4}
+// 	n2 := &node.ListNode{Val: 2, Next: n3}
+// 	n1 := &node.ListNode{Val: 1, Next: n2}
+// 	rel := removeElements1(n1, 2)
+// 	fmt.Println(rel)
+// }
 
 func removeElements1(head *node.ListNode, val int) *node.ListNode {
 	dummyHead := &node.ListNode{Next: head}

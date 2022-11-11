@@ -13,10 +13,6 @@ import (
 		2 -> 1 -> 4 -> 3
 */
 
-func main() {
-
-}
-
 func swapPairs(head *node.ListNode) *node.ListNode {
 	dummy := &node.ListNode{
 		Next: head,
