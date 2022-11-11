@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name:  web-store
+  namespace: default
+  labels:
+    app:  web-store
+spec:
+  selector:
+    matchLabels:
+      app: web-store
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app:  web-store
+    spec:
+      affinity:
+        podAffinity: # 亲和策略
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - store
+            topologyKey: "kubernetes.io/hostname" # 需要在同一个拓扑网络
+        podAntAffinity: # 反亲和策略
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchExpressions:
+              - key: app
+                operator: In
+                values:
+                - web-store
+            topologyKey: "kubernetes.io/hostname" # 不能在同一个拓扑网络
+      containers:
+      - name: web-app
+        image: nginx:1.12-alpine  
+     

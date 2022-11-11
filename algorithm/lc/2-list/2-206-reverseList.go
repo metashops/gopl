@@ -1,8 +1,6 @@
 package main
 
 import (
-	"fmt"
-
 	node "gopl/algorithm/lc/common"
 )
 
@@ -35,16 +33,16 @@ func reverseList2(head *node.ListNode) *node.ListNode {
 	return tmp
 }
 
-func main() {
-	n5 := &node.ListNode{Val: 5, Next: nil}
-	n4 := &node.ListNode{Val: 4, Next: n5}
-	n3 := &node.ListNode{Val: 3, Next: n4}
-	n2 := &node.ListNode{Val: 2, Next: n3}
-	n1 := &node.ListNode{Val: 1, Next: n2}
-	rel := reverseList(n1)
-	p := list(rel)
-	fmt.Println(p)
-}
+// func main() {
+// 	n5 := &node.ListNode{Val: 5, Next: nil}
+// 	n4 := &node.ListNode{Val: 4, Next: n5}
+// 	n3 := &node.ListNode{Val: 3, Next: n4}
+// 	n2 := &node.ListNode{Val: 2, Next: n3}
+// 	n1 := &node.ListNode{Val: 1, Next: n2}
+// 	rel := reverseList(n1)
+// 	p := list(rel)
+// 	fmt.Println(p)
+// }
 
 func list(head *node.ListNode) []int {
 	var res []int

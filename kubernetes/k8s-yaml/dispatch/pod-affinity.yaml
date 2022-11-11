@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "busy-affinity-test"
+  namespace: default
+  labels:
+    app: "busy-affinity-test"
+spec:
+  containers:
+  - name: busy-affinity-test
+    image: "busybox"
+    command: ["sleep", "3600"]
+  affinity:
+    nodeAffinity:
+      preferredDuringSchedulingIgnoredDuringExecution: # 软评分
+      - preference: # 指定喜欢的条件
+          matchExpressions:
+          - key: disk
+            values: 40
+            operator: Gt # 指定大于40的disk大小
+        weight: 90  # 权重（0～100）
+      - preference: # 指定喜欢的条件
+          matchExpressions:
+          - key: gpu
+            values: 3070
+            operator: Gt # 指定大于40的disk大小
+        weight: 10 # 权重（0～00）
+
+
+      # 硬性
+      # requiredDuringSchedulingIgnoredDuringExecution: # 硬性
+      #   nodeSelectorTerms:
+      #   - matchExpressions: # 匹配表达式，其实就是k,v
+      #     -   key: disktype
+      #         values: ["ssd","hdd"]
+      #         operator: In
+      #         # In （diskType 只要是“ssd 或者 “hdd”）
+      #         # NotIn (diskType 只要不是“ssd 或者 “hdd”)
+      #         # Exists （diskType 只要存在，无论值是什么，value不用写）
+      #         # DoesNotExist （diskType 只要不存在，无论值是什么，value不用写）
+      #         # Gt （Key 大于指定的值的节点）
+      #         # Lt （Key 小于指定的值的节点）
