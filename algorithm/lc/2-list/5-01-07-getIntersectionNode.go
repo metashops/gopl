@@ -4,6 +4,8 @@ import (
 	node "gopl/algorithm/lc/common"
 )
 
+// 面试题 02.07. 链表相交
+
 // func main() {
 // 	n7 := &node.ListNode{Val: 7, Next: nil}
 // 	n6 := &node.ListNode{Val: 6, Next: n7}

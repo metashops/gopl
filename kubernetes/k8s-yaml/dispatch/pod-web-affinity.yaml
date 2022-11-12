@@ -37,4 +37,7 @@ spec:
       containers:
       - name: web-app
         image: nginx:1.12-alpine  
-     
+      tolerations: # 容忍
+      - key: "nota"
+        operator: "Exists"
+        effect: "NoSchedule"

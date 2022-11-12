@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cluster-svc-no-selector
+  namespace: default
+spec:
+  type: ClusterIP
+  ports:
+  - name: abc
+    protocol: TCP
+    port: 80
+    targetPort: 80
+--- 
+apiVersion: v1
+kind: Endpoints
+metadata:
+  name: cluster-svc-no-selector # ep 和 service 必须一样
+  namespace: default
+subsets:
+- addresses:
+  - ip: 10.244.2.108
+  - ip: 10.244.1.88
+  - ip: 39.156.66.10
+  ports:
+  - name: abd # ep 和 service 必须一样
+    port: 80
+    protocol: TCP
