@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodeport-service-test
+  namespace: default
+spec:
+  selector:
+    app: canary-nginx
+  type: NodePort  # 类型
+  ports:
+  - name: nodeport-service-test
+    protocol: TCP
+    port: 80 # service port 80
+    targetPort: 80 # pod of port 80
+    nodePort: 30689
