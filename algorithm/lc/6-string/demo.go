@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 func reverseWords2(s string) (res string) {
 	s = " " + s + " "
 	l, r := len(s)-1, len(s)-1
@@ -18,12 +14,12 @@ func reverseWords2(s string) (res string) {
 	return res[:len(res)-1]
 }
 
-func main() {
-	s := "this is go language"
-	res := reverseWords2(s)
-	fmt.Println(res)
-
-	t := " " + s + " "
-	fmt.Println("t1:", len(t)-1)
-	fmt.Println("t2:", len(s)-1)
-}
+// func main() {
+// 	s := "this is go language"
+// 	res := reverseWords2(s)
+// 	fmt.Println(res)
+//
+// 	t := " " + s + " "
+// 	fmt.Println("t1:", len(t)-1)
+// 	fmt.Println("t2:", len(s)-1)
+// }
