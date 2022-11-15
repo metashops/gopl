@@ -9,13 +9,14 @@ example：
 解释: 9 出现在 nums 中并且下标为 4
 */
 
-// func main() {
-// 	nums := []int{-1, 0, 3, 5, 9, 12}
-// 	target := 9
-// 	se := search(nums, target)
-// 	fmt.Println(se)
-// }
-
+//	func main() {
+//		nums := []int{-1, 0, 3, 5, 9, 12}
+//		target := 9
+//		se := search(nums, target)
+//		fmt.Println(se)
+//	}
+//
+// 二分查找
 func search(nums []int, target int) int {
 	left := 0
 	right := len(nums) - 1
