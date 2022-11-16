@@ -6,7 +6,6 @@ import (
 
 func main() {
 	nums := []int{-4, 8, -1, 0, 88, 3, 10}
-	// sortnums := sort(sortedSquares(nums))
 	// fmt.Println(sortnums) // 平方后，数组变为 [16,1,0,9,100] => 排序后，数组变为 [0,1,9,16,100]
 
 	fmt.Println(sortedSquares2(nums))
