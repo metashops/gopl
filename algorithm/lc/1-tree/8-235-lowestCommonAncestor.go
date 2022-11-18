@@ -4,10 +4,6 @@ import (
 	tree `gopl/algorithm/lc/common`
 )
 
-func main() {
-
-}
-
 // 235. 二叉搜索树的最近公共祖先
 
 // 利用BSL的性质（前序遍历有序）
