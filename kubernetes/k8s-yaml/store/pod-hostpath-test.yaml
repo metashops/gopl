@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "pod-hostpath-test"
+  namespace: default
+  labels:
+    app: "pod-hostpath-test"
+spec:
+  containers:
+  - name: pod-time
+    image: "busybox"
+    command: ["sleep","60000"]
+    volumeMounts:
+    - name: localtime
+      mountPath: /etc/localtime
+  volumes:
+    - name: localtime # 卷名称一定要一样
+      hostPath: # 主机的这个文件挂在到容器目录(/etc/localtime)
+        path: /usr/share/zoneinfo/Asia/Shanghai
