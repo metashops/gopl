@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "nginx-pvc6"
+  namespace: default
+  labels:
+    app: "nginx-pvc6"
+spec:
+  containers:
+  - name: nginx-pvc6
+    image: "nginx"
+    ports:
+    - containerPort:  80
+      name:  http
+    volumeMounts:
+    - name: localtime
+      mountPath: /etc/localtime
+    - name: html
+      mountPath: /usr/share/nginx/html
+  volumes:
+    - name: localtime
+      hostPath:
+        path: /usr/share/zoneinfo/Asia/Shanghai
+    - name: html
+      persistentVolumeClaim:
+        claimName: nginx-pvc6 # 申请书名字
+  restartPolicy: Always
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: nginx-pvc6 # 申请书名字
+  namespace: default
+  labels:
+    app: nginx-pvc6
+spec:
+  storageClassName: nfs-client # 存储类的名字
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 70m
