@@ -1,0 +1,46 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: yf
+  namespace: default
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: all-global
+  namespace: default
+subjects:
+- kind: ServiceAccount
+  name: yf # "name" 是区分大小写的
+  namespace: default
+  apiGroup: ""
+roleRef:
+  kind: ClusterRole        # 此字段必须是 Role 或 ClusterRole
+  name: cluster-admin  # 此字段必须与你要绑定的 Role 或 ClusterRole 的名称匹配
+  apiGroup: rbac.authorization.k8s.io
+
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  namespace: default # 属于的名称空间
+  name: pod-reader-r
+rules: # 当前角色的规则
+- apiGroups: [""] # "" 标明 core API 组
+  resources: ["namespaces"]
+  verbs: ["get", "watch", "list"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: ns-pods-global
+  namespace: default
+subjects:
+- kind: ServiceAccount
+  name: yf # "name" 是区分大小写的
+  namespace: default
+  apiGroup: ""
+roleRef:
+  kind: ClusterRole        # 此字段必须是 Role 或 ClusterRole
+  name: pod-reader-r  # 此字段必须与你要绑定的 Role 或 ClusterRole 的名称匹配
+  apiGroup: rbac.authorization.k8s.io
