@@ -1,0 +1,32 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-volumes-10m-delete
+  namespace: default
+  labels:
+    app: local
+spec:
+  persistentVolumeReclaimPolicy: Delete  # 回收策略
+  storageClassName: my-nfs-storeage # 存储名称
+  capacity:
+    storage: 10m
+  accessModes:
+  - ReadWriteOnce
+  nfs: # 使用NFS存储
+    server: 192.168.122.11 # IP 是NFS服务器的地址
+    path: /nfs/data/delete/
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: pvc-5m-delete
+  namespace: default
+  labels:
+    app: pvc-5m-delete
+spec:
+  storageClassName: my-nfs-storeage # 存储
+  accessModes:
+  - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5m
