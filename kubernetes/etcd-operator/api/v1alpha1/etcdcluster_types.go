@@ -29,7 +29,10 @@ type EtcdClusterSpec struct {
 	// Important: Run "make" to regenerate code after modifying this file
 
 	// Foo is an example field of EtcdCluster. Edit etcdcluster_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	// Foo string `json:"foo,omitempty"`
+
+	Size  *int32 `json:"size"`
+	Image string `json:"image"`
 }
 
 // EtcdClusterStatus defines the observed state of EtcdCluster
@@ -38,8 +41,8 @@ type EtcdClusterStatus struct {
 	// Important: Run "make" to regenerate code after modifying this file
 }
 
-//+kubebuilder:object:root=true
-//+kubebuilder:subresource:status
+// +kubebuilder:object:root=true
+// +kubebuilder:subresource:status
 
 // EtcdCluster is the Schema for the etcdclusters API
 type EtcdCluster struct {
@@ -50,7 +53,7 @@ type EtcdCluster struct {
 	Status EtcdClusterStatus `json:"status,omitempty"`
 }
 
-//+kubebuilder:object:root=true
+// +kubebuilder:object:root=true
 
 // EtcdClusterList contains a list of EtcdCluster
 type EtcdClusterList struct {
