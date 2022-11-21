@@ -5,7 +5,5 @@ import (
 )
 
 func main() {
-	s := "h"
-	fmt.Println(len(s))
-
+	fmt.Println(uint32(3234455695))
 }
