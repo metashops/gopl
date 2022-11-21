@@ -9,4 +9,5 @@ metadata:
     app.kubernetes.io/created-by: etcd-operator
   name: etcdcluster-sample
 spec:
-  # TODO(user): Add fields here
+  size: 3  # 副本数量(应该是奇数)
+  image: cnych/etcd:v3.4.13  # 镜像
