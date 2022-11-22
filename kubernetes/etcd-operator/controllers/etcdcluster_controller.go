@@ -19,6 +19,7 @@ package controllers
 import (
 	"context"
 
+	"github.com/go-logr/logr"
 	appsv1 "k8s.io/api/apps/v1"
 	corev1 "k8s.io/api/core/v1"
 	"k8s.io/apimachinery/pkg/runtime"
@@ -33,6 +34,7 @@ import (
 // EtcdClusterReconciler reconciles a EtcdCluster object
 type EtcdClusterReconciler struct {
 	client.Client
+	Log    logr.Logger
 	Scheme *runtime.Scheme
 }
 
@@ -80,7 +82,7 @@ func (r *EtcdClusterReconciler) Reconcile(ctx context.Context, req ctrl.Request)
 
 	// CreateOrUpdate service
 	var sts appsv1.StatefulSet
-	sts.Name = etcdCluster.Name // this is CRD name: etcdcluster-sample
+	sts.Name = etcdCluster.Name // this is CRD name: etcdCluster-sample
 	sts.Namespace = etcdCluster.Namespace
 	or, err := ctrl.CreateOrUpdate(ctx, r, &sts, func() error {
 		// 调谐必须在这个函数中去实现,实际是拼装我们的 Service
