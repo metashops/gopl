@@ -4,13 +4,13 @@ import (
 	"fmt"
 )
 
-func sum(a, b int) int {
+func sum(a, b int) *int {
 	sum := 0
 	sum = a + b
-	return sum
+	return &sum
 }
 
 func main() {
 	a, b := 1, 2
-	fmt.Println(sum(a, b))
+	fmt.Printf("%v", *sum(a, b))
 }
