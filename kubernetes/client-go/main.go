@@ -25,6 +25,8 @@ func main() {
 	}
 
 	// 3、初始化shared informer factory以及pod informer
+	// 注：一个应用中往往会在多个地方对同一种资源对象都有informer的需求，所以就有了共享informer，
+	// 即SharedInformerFactory
 	factory := informers.NewSharedInformerFactory(clientSet, time.Second*30)
 	podInformer := factory.Core().V1().Pods()
 	informer := podInformer.Informer()
