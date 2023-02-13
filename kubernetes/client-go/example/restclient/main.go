@@ -1,14 +1,14 @@
 package main
 
 import (
-	`context`
-	`fmt`
+	"context"
+	"fmt"
 
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
-	`k8s.io/client-go/kubernetes/scheme`
-	`k8s.io/client-go/rest`
-	`k8s.io/client-go/tools/clientcmd`
+	"k8s.io/client-go/kubernetes/scheme"
+	"k8s.io/client-go/rest"
+	"k8s.io/client-go/tools/clientcmd"
 )
 
 func main() {
@@ -18,7 +18,7 @@ func main() {
 	*/
 
 	// 1、加载配置文件，生成 config 对象
-	config, err := clientcmd.BuildConfigFromFlags("", "../../config")
+	config, err := clientcmd.BuildConfigFromFlags("", "/Users/apple/.kube/config")
 	if err != nil {
 		panic(err.Error())
 	}
@@ -43,11 +43,11 @@ func main() {
 
 	// 7、跟APIServer交互
 	err = restClient.Get(). // Get 请求
-		Namespace("default"). // 指定名称空间
-		Resource("pods"). // 指定需要查询的资源，资源名称
-		VersionedParams(&metav1.ListOptions{}, scheme.ParameterCodec). // 参数及参数系列化工具
-		Do(context.TODO()). // 触发请求
-		Into(result) // 写入返回结果
+				Namespace("default").                                          // 指定名称空间
+				Resource("pods").                                              // 指定需要查询的资源，资源名称
+				VersionedParams(&metav1.ListOptions{}, scheme.ParameterCodec). // 参数及参数系列化工具
+				Do(context.TODO()).                                            // 触发请求
+				Into(result)                                                   // 写入返回结果
 	if err != nil {
 		panic(err.Error())
 	}

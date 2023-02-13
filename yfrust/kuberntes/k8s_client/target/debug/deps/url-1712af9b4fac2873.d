@@ -1,0 +1,11 @@
+/Users/apple/manongyufu/study/gopl/yfrust/kuberntes/k8s_client/target/debug/deps/url-1712af9b4fac2873.rmeta: /Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/url-2.3.1/src/lib.rs /Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/url-2.3.1/src/host.rs /Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/url-2.3.1/src/origin.rs /Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/url-2.3.1/src/parser.rs /Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/url-2.3.1/src/path_segments.rs /Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/url-2.3.1/src/slicing.rs /Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/url-2.3.1/src/quirks.rs
+
+/Users/apple/manongyufu/study/gopl/yfrust/kuberntes/k8s_client/target/debug/deps/url-1712af9b4fac2873.d: /Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/url-2.3.1/src/lib.rs /Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/url-2.3.1/src/host.rs /Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/url-2.3.1/src/origin.rs /Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/url-2.3.1/src/parser.rs /Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/url-2.3.1/src/path_segments.rs /Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/url-2.3.1/src/slicing.rs /Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/url-2.3.1/src/quirks.rs
+
+/Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/url-2.3.1/src/lib.rs:
+/Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/url-2.3.1/src/host.rs:
+/Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/url-2.3.1/src/origin.rs:
+/Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/url-2.3.1/src/parser.rs:
+/Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/url-2.3.1/src/path_segments.rs:
+/Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/url-2.3.1/src/slicing.rs:
+/Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/url-2.3.1/src/quirks.rs:

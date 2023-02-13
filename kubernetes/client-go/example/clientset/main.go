@@ -1,12 +1,12 @@
 package main
 
 import (
-	`context`
-	`fmt`
+	"context"
+	"fmt"
 
-	metav1 `k8s.io/apimachinery/pkg/apis/meta/v1`
-	`k8s.io/client-go/kubernetes`
-	`k8s.io/client-go/tools/clientcmd`
+	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
+	"k8s.io/client-go/kubernetes"
+	"k8s.io/client-go/tools/clientcmd"
 )
 
 func main() {
@@ -22,7 +22,8 @@ func main() {
 	}
 
 	// 3、
-	pods, err := clientSet.CoreV1().
+	pods, err := clientSet.
+		CoreV1().
 		Pods("default").
 		List(context.TODO(), metav1.ListOptions{})
 	if err != nil {
