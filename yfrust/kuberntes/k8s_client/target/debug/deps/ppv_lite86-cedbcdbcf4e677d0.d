@@ -1,0 +1,9 @@
+/Users/apple/manongyufu/study/gopl/yfrust/kuberntes/k8s_client/target/debug/deps/ppv_lite86-cedbcdbcf4e677d0.rmeta: /Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/ppv-lite86-0.2.17/src/lib.rs /Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/ppv-lite86-0.2.17/src/soft.rs /Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/ppv-lite86-0.2.17/src/types.rs /Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/ppv-lite86-0.2.17/src/x86_64/mod.rs /Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/ppv-lite86-0.2.17/src/x86_64/sse2.rs
+
+/Users/apple/manongyufu/study/gopl/yfrust/kuberntes/k8s_client/target/debug/deps/ppv_lite86-cedbcdbcf4e677d0.d: /Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/ppv-lite86-0.2.17/src/lib.rs /Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/ppv-lite86-0.2.17/src/soft.rs /Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/ppv-lite86-0.2.17/src/types.rs /Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/ppv-lite86-0.2.17/src/x86_64/mod.rs /Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/ppv-lite86-0.2.17/src/x86_64/sse2.rs
+
+/Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/ppv-lite86-0.2.17/src/lib.rs:
+/Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/ppv-lite86-0.2.17/src/soft.rs:
+/Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/ppv-lite86-0.2.17/src/types.rs:
+/Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/ppv-lite86-0.2.17/src/x86_64/mod.rs:
+/Users/apple/.cargo/registry/src/mirrors.sjtug.sjtu.edu.cn-7a04d2510079875b/ppv-lite86-0.2.17/src/x86_64/sse2.rs:
