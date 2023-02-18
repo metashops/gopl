@@ -44,6 +44,33 @@ func NewMemCache(maxItemSize int) *MemCache {
 	}
 }
 
+// Delete delete the key
+func (c *MemCache) Delete(key string) {
+	c.m.Lock()
+	defer c.m.Unlock()
+	if c.cache == nil {
+		return
+	}
+	if ele, ok := c.cache[key]; ok {
+		c.cacheList.Remove(ele)
+		key := ele.Value.(*entry).key
+		delete(c.cache, key)
+		return
+	}
+}
+
+// Status return the status of cache
+func (c *MemCache) Status() *CacheStatus {
+	c.m.RLock()
+	defer c.m.RUnlock()
+	return &CacheStatus{
+		MaxItemSize: c.maxItemSize,
+		CurrentSize: c.cacheList.Len(),
+		Gets:        c.gets.Get(),
+		Hits:        c.hits.Get(),
+	}
+}
+
 // Get value with key
 func (c *MemCache) Get(key string) (interface{}, bool) {
 	c.m.RLock()
