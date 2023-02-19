@@ -41,7 +41,53 @@ func (l *LRUCache) detach(n *Node) {
 	n.Next.Prev = n.Prev
 }
 
-func (l *LRUCache) Put(key, value interface{}) {}
-func (l *LRUCache) Get(key interface{}) {
-	//
+// 节点插入头部，在Head节点后
+func (l *LRUCache) attach(n *Node) {
+	n.Prev = l.Head
+	n.Next = l.Head.Next
+
+	l.Head.Next = n
+	n.Next.Prev = n
+}
+
+func (l *LRUCache) Put(key, value interface{}) {
+	l.m.Lock()
+	defer l.m.Unlock()
+
+	// 不包含
+	if v, ok := l.Map[key]; ok {
+		v.V = value
+		l.detach(v)
+		l.attach(v)
+
+		return
+	}
+
+	var n *Node
+	if len(l.Map) >= l.Capacity {
+		// 说明已经达到最大容量
+		n = l.Tail.Prev
+		l.detach(n)
+		delete(l.Map, n.K)
+
+	} else {
+		n = &Node{}
+	}
+	n.K = key
+	n.V = value
+	l.Map[n.K] = n
+	l.attach(n)
+}
+
+func (l *LRUCache) Get(key interface{}) interface{} {
+	l.m.RLock()
+	defer l.m.RUnlock()
+
+	if v, ok := l.Map[key]; ok {
+		// 将节点放到最前面
+		l.detach(v)
+		l.attach(v)
+		return v.V
+	}
+	return interface{}(-1)
 }
