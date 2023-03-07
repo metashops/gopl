@@ -9,8 +9,8 @@ package main
 
 // TODO:
 func findKthLargestK(nums []int, k int) int {
-	nums = heapSort(nums)
-	return nums[k-1]
+	res := heapSort(nums)
+	return res[k-1]
 }
 
 func heapSort(nums []int) []int {
