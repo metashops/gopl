@@ -1,15 +1,4 @@
-package main
-
-import (
-	`fmt`
-)
-
-func main() {
-	fmt.Println(Sqrt(4))
-	l, r := 0, 4
-	mid := l + (r-l)/2
-	fmt.Println(mid)
-}
+package mathematics
 
 func Sqrt(x int) int {
 	left, right := 0, x
@@ -24,4 +13,18 @@ func Sqrt(x int) int {
 		}
 	}
 	return right
+}
+
+// 精确到3位小数
+func mySqrt(x float64) float64 {
+	l, r := 0.0, x
+	for l <= r {
+		mid := (l + r) / 2
+		if x < mid*mid {
+			r = mid - 1e-3
+		} else {
+			l = mid + 1e-3
+		}
+	}
+	return r
 }
