@@ -1,0 +1,9 @@
+syntax = "proto3";
+
+option go_package = ".;proto";
+
+message Student {
+  string name = 1;
+  int32 id = 2;
+  repeated string course = 3;
+}
