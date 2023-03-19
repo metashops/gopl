@@ -5,23 +5,21 @@ import (
 )
 
 func main() {
-	fmt.Println(Sqrt(4))
-	l, r := 0, 4
-	mid := l + (r-l)/2
-	fmt.Println(mid)
+	// var m1 = make(map[string]int)
+	var m1 = map[string]int{}
+	m1["name"] = 123
+	if m1 == nil {
+		fmt.Println("m1 is nil")
+	} else {
+		fmt.Println(m1)
+	}
 }
 
-func Sqrt(x int) int {
-	left, right := 0, x
-	for left <= right {
-		mid := left + (right-left)>>1
-		if mid*mid == x {
-			return mid
-		} else if mid*mid > x {
-			right = mid - 1
-		} else {
-			left = mid + 1
+func demo(nums []int, target int) []int {
+	for k, _ := range nums {
+		if k == 1 {
+			nums[k] = target
 		}
 	}
-	return right
+	return nums
 }
